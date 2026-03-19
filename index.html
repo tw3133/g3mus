@@ -3,7 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XAMU Vault - Portal Indie</title>
+    
+    <title>XAMU Vault | Indie Games, Webnovels & Apps</title>
+
+    <meta name="description" lang="es" content="Portal oficial de Xamu. Explora juegos indie, aplicaciones, webnovels y mangas originales con estética barroca.">
+    <meta name="description" lang="en" content="Xamu's official vault. Explore indie games, apps, webnovels, and original manga with a classic gothic aesthetic.">
+    <meta name="description" lang="ja" content="Xamuの公式ポータル。インディーゲーム、アプリ、ウェブノベル、オリジナル漫画をバロック様式の美学で。">
+    <meta name="description" lang="zh" content="Xamu 官方门户。探索具有巴洛克美学的独立游戏、应用、网络小说和原创漫画。">
+    <meta name="description" lang="ko" content="Xamu 공식 포털. 바로크 양식의 인디 게임, 앱, 웹소설, 오리지널 만화를 만나보세요.">
+    <meta name="description" lang="fr" content="Portail officiel de Xamu. Explorez des jeux indie, des applications, des webnovels et des mangas originaux.">
+    <meta name="description" lang="pt" content="Portal oficial do Xamu. Explore jogos indie, aplicativos, webnovels e mangás originais com estética barroca.">
+
+    <meta name="keywords" content="Xamu, indie games, 独立游戏, インディーゲーム, webnovels, manga, indie dev, SOTN, retrogaming, g3mus">
+    <meta name="author" content="Xamu">
+
     <style>
         /* --- RESET Y BASES (Estilo SOTN) --- */
         * {
@@ -13,12 +26,10 @@
         }
 
         body {
-            background-color: #000; /* Fondo negro absoluto */
-            /* Textura de fondo sutil (puedes cambiar esto por una imagen de piedra si quieres) */
-            background-image: 
-                radial-gradient(circle at center, #1a0505 0%, #000000 70%);
-            color: #e0e0e0; /* Texto gris claro/plateado envejecido */
-            font-family: 'Times New Roman', Times, serif; /* Fallback gótico/clásico */
+            background-color: #000;
+            background-image: radial-gradient(circle at center, #1a0505 0%, #000000 70%);
+            color: #e0e0e0;
+            font-family: 'Times New Roman', Times, serif;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -27,34 +38,17 @@
             overflow-x: hidden;
         }
 
-        /* Fuentes decorativas (simulando SOTN) */
         @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=IM+Fell+English+SC&display=swap');
 
-        h1 {
-            font-family: 'Cinzel Decorative', cursive;
-            color: #d4af37; /* Oro */
-            text-align: center;
-            text-transform: uppercase;
-            text-shadow: 0 0 10px #ff0000, 0 0 20px #8b0000; /* Brillo rojo sangre */
-            font-size: 3rem;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
+        /* CONTENEDOR DE ANUNCIO SUPERIOR */
+        .ad-top-container {
+            margin-bottom: 20px;
+            min-height: 55px; /* Evita saltos de layout */
+            display: flex;
+            justify-content: center;
+            width: 100%;
         }
 
-        .subtitle {
-            font-family: 'IM Fell English SC', serif;
-            color: #b22222; /* Rojo ladrillo/sangre */
-            text-align: center;
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-
-        /* --- CONTENEDOR PRINCIPAL --- */
         .main-container {
             width: 100%;
             max-width: 1000px;
@@ -63,126 +57,147 @@
             align-items: center;
         }
 
-        /* --- LA MATRIZ DE CUADRADOS (Grid) --- */
+        h1 {
+            font-family: 'Cinzel Decorative', cursive;
+            color: #d4af37;
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #8b0000;
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-family: 'IM Fell English SC', serif;
+            color: #b22222;
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        /* GRID DE PROYECTOS */
         .project-grid {
             display: grid;
-            /* Crea una matriz de cuadrados. Auto-fill ajusta según el ancho de pantalla */
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 25px; /* Espacio entre castillos/proyectos */
+            gap: 25px;
             width: 100%;
             padding: 20px;
         }
 
-        /* --- ESTILO DE CADA CUADRADO (LINK) --- */
         .grid-item {
             text-decoration: none;
             color: inherit;
-            aspect-ratio: 1 / 1; /* Fuerza a que sea un cuadrado perfecto */
+            aspect-ratio: 1 / 1;
             background-color: #0a0a0a;
-            border: 3px solid #444; /* Borde metal envejecido */
+            border: 3px solid #444;
             position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end; /* Texto abajo */
+            justify-content: flex-end;
             padding: 15px;
             overflow: hidden;
-            transition: all 0.4s ease-in-out;
-            
-            /* Efecto de sombra interior barroca */
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
         }
 
-        /* Esquinas ornamentadas (pseudo-elementos) */
-        .grid-item::before {
+        .grid-item::before, .grid-item::after {
             content: '';
             position: absolute;
-            top: 5px; left: 5px; width: 15px; height: 15px;
-            border-top: 2px solid #d4af37; border-left: 2px solid #d4af37;
+            width: 15px; height: 15px;
+            border-color: #d4af37;
+            border-style: solid;
+            pointer-events: none;
         }
-        .grid-item::after {
-            content: '';
-            position: absolute;
-            bottom: 5px; right: 5px; width: 15px; height: 15px;
-            border-bottom: 2px solid #d4af37; border-right: 2px solid #d4af37;
-        }
+        .grid-item::before { top: 5px; left: 5px; border-width: 2px 0 0 2px; }
+        .grid-item::after { bottom: 5px; right: 5px; border-width: 0 2px 2px 0; }
 
-        /* --- HOVER EFFECTS (Efecto SOTN al seleccionar) --- */
         .grid-item:hover {
-            border-color: #d4af37; /* Borde dorado */
-            transform: translateY(-5px) scale(1.03);
-            /* Brillo exterior rojo/dorado */
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5), inset 0 0 10px rgba(255,0,0,0.3);
+            border-color: #d4af37;
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2), inset 0 0 10px rgba(255,0,0,0.3);
             background-color: #151515;
         }
 
-        /* Imagen de fondo sutil para cada cuadrado (opcional) */
         .grid-item .bg-graphic {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36z8gAFWNhYGFEMhAN4unp+Y8MAAs4DRfAn48bAAAAAElFTkSuQmCC'); /* Textura de puntos */
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36z8gAFWNhYGFEMhAN4unp+Y8MAAs4DRfAn48bAAAAAElFTkSuQmCC');
             opacity: 0.2;
             z-index: 1;
         }
 
-        /* Contenido del texto dentro del cuadrado */
         .project-info {
             position: relative;
-            z-index: 2; /* Por encima de la textura */
-            background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-            padding-top: 20px;
+            z-index: 2;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+            padding: 10px;
         }
 
         .project-type {
             font-family: 'IM Fell English SC', serif;
             color: #888;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 3px;
         }
 
-        .grid-item:hover .project-type {
-            color: #b22222; /* Rojo al hover */
-        }
+        .grid-item:hover .project-type { color: #b22222; }
 
         .project-title {
             font-family: 'Times New Roman', serif;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: bold;
             color: #e0e0e0;
-            text-shadow: 1px 1px 2px #000;
         }
 
         .grid-item:hover .project-title {
             color: #fff;
-            text-shadow: 0 0 5px #d4af37;
+            text-shadow: 0 0 8px #d4af37;
         }
 
-        /* --- FOOTER --- */
         footer {
-            margin-top: 50px;
+            margin-top: 60px;
             font-size: 0.8rem;
-            color: #555;
+            color: #666;
             font-family: 'IM Fell English SC', serif;
             text-align: center;
             border-top: 1px solid #222;
-            padding-top: 10px;
+            padding: 20px;
             width: 100%;
             max-width: 1000px;
+            text-transform: uppercase;
         }
 
-        /* Responsividad para móviles muy pequeños */
         @media (max-width: 480px) {
-            h1 { font-size: 2rem; }
-            .project-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-            .project-title { font-size: 1rem; }
+            .project-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
         }
     </style>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Xamu",
+      "url": "https://tw3133.github.io/g3mus/",
+      "jobTitle": "Indie Game Developer",
+      "knowsAbout": ["Game Development", "Rust", "Nim", "Trading Tools", "Digital Art"],
+      "sameAs": [
+        "https://github.com/tw3133", 
+        "https://tu-usuario.neocities.org/"
+      ]
+    }
+    </script>
 </head>
 <body>
 
-   <div>
-   <script>
+    <div class="ad-top-container">
+        <script>
   atOptions = {
     'key' : '6885fcdd1de6e6ca987cc310c5405767',
     'format' : 'iframe',
@@ -190,18 +205,17 @@
     'width' : 320,
     'params' : {}
   };
-</script>
-<script src="https://www.highperformanceformat.com/6885fcdd1de6e6ca987cc310c5405767/invoke.js"></script>
-   </div>
+     </script>
+     <script src="https://www.highperformanceformat.com/6885fcdd1de6e6ca987cc310c5405767/invoke.js"></script>
+    </div>
 
     <div class="main-container">
         <header>
             <h1>XAMU VAULT</h1>
-            <div class="subtitle">Curiosidades Digitales & Creaciones Indie</div>
+            <div class="subtitle">Digital Relics & Indie Creations</div>
         </header>
 
         <nav class="project-grid">
-            
             <a href="juego-prohibido/index.html" class="grid-item">
                 <div class="bg-graphic"></div>
                 <div class="project-info">
@@ -242,18 +256,17 @@
                 </div>
             </a>
 
-            <a href="#" class="grid-item" style="opacity: 0.5; cursor: not-allowed;">
+            <a href="#" class="grid-item" style="opacity: 0.4; cursor: not-allowed;">
                 <div class="bg-graphic"></div>
                 <div class="project-info">
-                    <div class="project-type">???</div>
+                    <div class="project-type">Locked</div>
                     <div class="project-title">Sello Roto</div>
                 </div>
             </a>
-
         </nav>
 
         <footer>
-            Desarrollado por Xamu | <script>document.write(new Date().getFullYear())</script> | "What is a man? A miserable little pile of secrets."
+            Xamu Vault | <script>document.write(new Date().getFullYear())</script> | "What is a man? A miserable little pile of secrets."
         </footer>
     </div>
 
