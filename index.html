@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body { margin: 0; background-color: #222; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        canvas { border: 1px solid black; background-color: black; }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+    <script type='text/javascript'>
+      var Module = { canvas: document.getElementById('canvas') };
+    </script>
+    <script async type="text/javascript" src="index.js"></script>
+</body>
+</html>
