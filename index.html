@@ -1,20 +1,261 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mi-notepad</title>
-    <script type="module" crossorigin src="./assets/index-DDoc9Ocq.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-nqMpL4T3.css">
-  </head>
-  <body>
-    <div id="root"></div>
-    
-    <div>
-	<script async="async" data-cfasync="false" src="https://pl28942120.profitablecpmratenetwork.com/d370f89e7010daff93d4d48d9b13b38c/invoke.js"></script>
-     <div id="container-d370f89e7010daff93d4d48d9b13b38c"></div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XAMU Vault - Portal Indie</title>
+    <style>
+        /* --- RESET Y BASES (Estilo SOTN) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000; /* Fondo negro absoluto */
+            /* Textura de fondo sutil (puedes cambiar esto por una imagen de piedra si quieres) */
+            background-image: 
+                radial-gradient(circle at center, #1a0505 0%, #000000 70%);
+            color: #e0e0e0; /* Texto gris claro/plateado envejecido */
+            font-family: 'Times New Roman', Times, serif; /* Fallback gótico/clásico */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        /* Fuentes decorativas (simulando SOTN) */
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=IM+Fell+English+SC&display=swap');
+
+        h1 {
+            font-family: 'Cinzel Decorative', cursive;
+            color: #d4af37; /* Oro */
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #8b0000; /* Brillo rojo sangre */
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-family: 'IM Fell English SC', serif;
+            color: #b22222; /* Rojo ladrillo/sangre */
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        /* --- CONTENEDOR PRINCIPAL --- */
+        .main-container {
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- LA MATRIZ DE CUADRADOS (Grid) --- */
+        .project-grid {
+            display: grid;
+            /* Crea una matriz de cuadrados. Auto-fill ajusta según el ancho de pantalla */
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 25px; /* Espacio entre castillos/proyectos */
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* --- ESTILO DE CADA CUADRADO (LINK) --- */
+        .grid-item {
+            text-decoration: none;
+            color: inherit;
+            aspect-ratio: 1 / 1; /* Fuerza a que sea un cuadrado perfecto */
+            background-color: #0a0a0a;
+            border: 3px solid #444; /* Borde metal envejecido */
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Texto abajo */
+            padding: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease-in-out;
+            
+            /* Efecto de sombra interior barroca */
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+        }
+
+        /* Esquinas ornamentadas (pseudo-elementos) */
+        .grid-item::before {
+            content: '';
+            position: absolute;
+            top: 5px; left: 5px; width: 15px; height: 15px;
+            border-top: 2px solid #d4af37; border-left: 2px solid #d4af37;
+        }
+        .grid-item::after {
+            content: '';
+            position: absolute;
+            bottom: 5px; right: 5px; width: 15px; height: 15px;
+            border-bottom: 2px solid #d4af37; border-right: 2px solid #d4af37;
+        }
+
+        /* --- HOVER EFFECTS (Efecto SOTN al seleccionar) --- */
+        .grid-item:hover {
+            border-color: #d4af37; /* Borde dorado */
+            transform: translateY(-5px) scale(1.03);
+            /* Brillo exterior rojo/dorado */
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5), inset 0 0 10px rgba(255,0,0,0.3);
+            background-color: #151515;
+        }
+
+        /* Imagen de fondo sutil para cada cuadrado (opcional) */
+        .grid-item .bg-graphic {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36z8gAFWNhYGFEMhAN4unp+Y8MAAs4DRfAn48bAAAAAElFTkSuQmCC'); /* Textura de puntos */
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        /* Contenido del texto dentro del cuadrado */
+        .project-info {
+            position: relative;
+            z-index: 2; /* Por encima de la textura */
+            background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+            padding-top: 20px;
+        }
+
+        .project-type {
+            font-family: 'IM Fell English SC', serif;
+            color: #888;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 3px;
+        }
+
+        .grid-item:hover .project-type {
+            color: #b22222; /* Rojo al hover */
+        }
+
+        .project-title {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #e0e0e0;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .grid-item:hover .project-title {
+            color: #fff;
+            text-shadow: 0 0 5px #d4af37;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #555;
+            font-family: 'IM Fell English SC', serif;
+            text-align: center;
+            border-top: 1px solid #222;
+            padding-top: 10px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        /* Responsividad para móviles muy pequeños */
+        @media (max-width: 480px) {
+            h1 { font-size: 2rem; }
+            .project-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .project-title { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+   <div>
+   <script>
+  atOptions = {
+    'key' : '6885fcdd1de6e6ca987cc310c5405767',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/6885fcdd1de6e6ca987cc310c5405767/invoke.js"></script>
+   </div>
+
+    <div class="main-container">
+        <header>
+            <h1>XAMU VAULT</h1>
+            <div class="subtitle">Curiosidades Digitales & Creaciones Indie</div>
+        </header>
+
+        <nav class="project-grid">
+            
+            <a href="juego-prohibido/index.html" class="grid-item">
+                <div class="bg-graphic"></div>
+                <div class="project-info">
+                    <div class="project-type">Indie Game</div>
+                    <div class="project-title">Castillo Nocturno</div>
+                </div>
+            </a>
+
+            <a href="apps/grimorio-digital/index.html" class="grid-item">
+                <div class="bg-graphic"></div>
+                <div class="project-info">
+                    <div class="project-type">App / Tool</div>
+                    <div class="project-title">Grimorio Notas</div>
+                </div>
+            </a>
+
+            <a href="novelas/sangre-eterna/index.html" class="grid-item">
+                <div class="bg-graphic"></div>
+                <div class="project-info">
+                    <div class="project-type">Webnovel</div>
+                    <div class="project-title">Crónicas de Sangre</div>
+                </div>
+            </a>
+
+            <a href="manga/cazador-almas/index.html" class="grid-item">
+                <div class="bg-graphic"></div>
+                <div class="project-info">
+                    <div class="project-type">Indie Manga</div>
+                    <div class="project-title">Soul Hunter X</div>
+                </div>
+            </a>
+
+            <a href="proyectos/pixel-quest/index.html" class="grid-item">
+                <div class="bg-graphic"></div>
+                <div class="project-info">
+                    <div class="project-type">Minijuego</div>
+                    <div class="project-title">Pixel Quest RT</div>
+                </div>
+            </a>
+
+            <a href="#" class="grid-item" style="opacity: 0.5; cursor: not-allowed;">
+                <div class="bg-graphic"></div>
+                <div class="project-info">
+                    <div class="project-type">???</div>
+                    <div class="project-title">Sello Roto</div>
+                </div>
+            </a>
+
+        </nav>
+
+        <footer>
+            Desarrollado por Xamu | <script>document.write(new Date().getFullYear())</script> | "What is a man? A miserable little pile of secrets."
+        </footer>
     </div>
-    
-  </body>
+
+</body>
 </html>
